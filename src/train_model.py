@@ -48,4 +48,7 @@ print(fbeta)
 model_path = '../model/model.pkl'
 with open(model_path, 'wb') as f:
     pickle.dump(rf, f)
+encoder_path = '../model/encoder.pkl'
+with open(encoder_path, 'wb') as f:
+    pickle.dump(encoder, f)
 
