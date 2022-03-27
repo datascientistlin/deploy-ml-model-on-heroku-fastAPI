@@ -1,5 +1,5 @@
 outs:
-- md5: c77d53a024e847c07084aba89297d72d.dir
-  size: 65620675
-  nfiles: 1
+- md5: 6cb26d14f07fdc4b265b25b2b57a64f7.dir
+  size: 65553793
+  nfiles: 2
   path: model
