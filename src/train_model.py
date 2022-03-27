@@ -52,3 +52,15 @@ encoder_path = '../model/encoder.pkl'
 with open(encoder_path, 'wb') as f:
     pickle.dump(encoder, f)
 
+with open('../output/output.txt', 'w') as f:
+    sliced_feature = 'education'
+    f.write(f'Feature: {sliced_feature}\n')
+    for slice in sorted(test[sliced_feature].unique()):
+        sliced_test = test[test[sliced_feature] == slice]
+        f.write(f'Slice: {slice}\n')
+        X_test_sliced, y_test_sliced, _, _ = process_data(
+            sliced_test, categorical_features=cat_features, label="salary", training=False, encoder=encoder, lb=lb
+        )
+        pred = inference(rf, X_test_sliced)
+        precision, recall, fbeta = compute_model_metrics(y_test_sliced, pred)
+        f.write(f'Precision: {precision:.2f}, recall: {recall:.2f}, fbeta: {fbeta:.2f}\n')
