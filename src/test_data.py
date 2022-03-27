@@ -1,10 +1,12 @@
 import pandas as pd
 import pytest
+import os
 
 @pytest.fixture
 def data():
     """ Funciont to load cleand dataset"""
-    df = pd.read_csv('../data/census_clean.csv')
+    ROOT_DIR = os.path.abspath(os.curdir)
+    df = pd.read_csv(os.path.join(ROOT_DIR, 'data/census_clean.csv'))
     return df
 
 def test_data_shape(data):
