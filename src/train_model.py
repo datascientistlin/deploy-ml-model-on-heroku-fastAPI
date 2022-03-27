@@ -3,6 +3,7 @@ import pandas as pd
 import yaml
 from yaml import CLoader as Loader
 import pickle
+import os
 from sklearn.model_selection import train_test_split
 
 # Add the necessary imports for the starter code.
@@ -10,8 +11,9 @@ from data import process_data
 from model import train_model, compute_model_metrics, inference
 
 # Add code to load in the data.
-data = pd.read_csv('../data/census_clean.csv')
-with open ('./params.yaml', 'rb') as f:
+ROOT_DIR = os.path.abspath(os.curdir)
+data = pd.read_csv(os.path.join(ROOT_DIR, 'data/census_clean.csv'))
+with open (os.path.join(ROOT_DIR, 'src/params.yaml'), 'rb') as f:
     params = yaml.load(f, Loader=Loader)
 
 # Optional enhancement, use K-fold cross validation instead of a train-test split.
@@ -45,14 +47,14 @@ print(precision)
 print(recall)
 print(fbeta)
 
-model_path = '../model/model.pkl'
+model_path = os.path.join(ROOT_DIR, 'model/model.pkl')
 with open(model_path, 'wb') as f:
     pickle.dump(rf, f)
-encoder_path = '../model/encoder.pkl'
+encoder_path = os.path.join(ROOT_DIR, 'model/encoder.pkl')
 with open(encoder_path, 'wb') as f:
     pickle.dump(encoder, f)
 
-with open('../output/output.txt', 'w') as f:
+with open(os.path.join(ROOT_DIR, 'output/output.txt'), 'w') as f:
     sliced_feature = 'education'
     f.write(f'Feature: {sliced_feature}\n')
     for slice in sorted(test[sliced_feature].unique()):
