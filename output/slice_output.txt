@@ -1,0 +1,33 @@
+Feature: education
+Slice: 10th
+Precision: 0.50, recall: 0.10, fbeta: 0.17
+Slice: 11th
+Precision: 1.00, recall: 0.33, fbeta: 0.50
+Slice: 12th
+Precision: 0.75, recall: 0.43, fbeta: 0.55
+Slice: 1st-4th
+Precision: 1.00, recall: 1.00, fbeta: 1.00
+Slice: 5th-6th
+Precision: 1.00, recall: 0.25, fbeta: 0.40
+Slice: 7th-8th
+Precision: 0.50, recall: 0.12, fbeta: 0.20
+Slice: 9th
+Precision: 1.00, recall: 0.17, fbeta: 0.29
+Slice: Assoc-acdm
+Precision: 0.73, recall: 0.44, fbeta: 0.55
+Slice: Assoc-voc
+Precision: 0.57, recall: 0.59, fbeta: 0.58
+Slice: Bachelors
+Precision: 0.74, recall: 0.72, fbeta: 0.73
+Slice: Doctorate
+Precision: 0.82, recall: 0.76, fbeta: 0.79
+Slice: HS-grad
+Precision: 0.63, recall: 0.42, fbeta: 0.50
+Slice: Masters
+Precision: 0.84, recall: 0.78, fbeta: 0.81
+Slice: Preschool
+Precision: 1.00, recall: 1.00, fbeta: 1.00
+Slice: Prof-school
+Precision: 0.86, recall: 0.95, fbeta: 0.90
+Slice: Some-college
+Precision: 0.65, recall: 0.51, fbeta: 0.57
